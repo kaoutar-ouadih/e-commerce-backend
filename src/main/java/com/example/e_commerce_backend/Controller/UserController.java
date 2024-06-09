@@ -13,7 +13,7 @@ import java.util.Base64;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "http://e-commerce-front-beta.vercel.app/"})
 @RequestMapping("/users")
 public class UserController {
     private final UserService userService;
