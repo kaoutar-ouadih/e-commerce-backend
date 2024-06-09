@@ -20,32 +20,27 @@ public class ProductController {
         this.productService = productService;
     }
 
-//    @CrossOrigin(origins = {"http://e-commerce-front-beta.vercel.app"})
     @PostMapping("/add")
     public String addProduct(@RequestBody Product product){
         this.productService.addProduct(product);
         return "Product added successfully";
     }
 
-//    @CrossOrigin(origins = {"http://e-commerce-front-beta.vercel.app"})
     @GetMapping("/all")
     public List<Product> getAllProducts(){
         return this.productService.getAllProducts();
     }
 
-//    @CrossOrigin(origins = {"http://e-commerce-front-beta.vercel.app"})
     @DeleteMapping("delete/{id}")
     public String deleteProduct(@PathVariable int id){
         return this.productService.deleteProduct(id);
     }
 
-//    @CrossOrigin(origins = {"http://e-commerce-front-beta.vercel.app"})
     @PutMapping("update/{id}")
     public String updateProduct(@PathVariable int id, @RequestBody Product product){
         return this.productService.updateProduct(id, product);
     }
 
-//    @CrossOrigin(origins = {"http://e-commerce-front-beta.vercel.app"})
     @GetMapping("/{id}")
     public Product getProduct(@PathVariable int id){
         return this.productService.getProduct(id);
