@@ -21,7 +21,7 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
-
+    @CrossOrigin(origins = {"http://localhost:4200", "http://e-commerce-front-beta.vercel.app"})
     @PostMapping("/add")
     public ResponseEntity<ApiResponse> addUser(@RequestBody User user){
         String hashedPassword = hashPassword(user.getPassword());
@@ -42,7 +42,7 @@ public class UserController {
             return null;
         }
     }
-
+    @CrossOrigin(origins = {"http://localhost:4200", "http://e-commerce-front-beta.vercel.app"})
     @PostMapping("/login")
     public ResponseEntity<Optional<User>> login(@RequestBody User userData){
         Optional<User> user= this.userService.getUserByEmail(userData.getEmail());
