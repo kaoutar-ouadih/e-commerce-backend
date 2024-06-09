@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = {"http://e-commerce-front-beta.vercel.app/"})
+@CrossOrigin(origins = {"http://e-commerce-front-beta.vercel.app"})
 @RequestMapping("/products")
 public class ProductController {
     private final ProductService productService;
